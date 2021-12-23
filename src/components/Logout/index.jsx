@@ -32,8 +32,8 @@ export const Logout = () => {
     }
 
     return(
-        user &&  <NavLink activeClassName="nav-selected" to="/login" onClick={logoutUser}>
+        user &&  <a activeClassName="nav-selected" onClick={logoutUser}>
             Logout
-        </NavLink>
+        </a>
     )
 }

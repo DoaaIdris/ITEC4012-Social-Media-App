@@ -15,10 +15,10 @@ export const Navbar = () => {
                     <NavLink exact={true} activeClassName="nav-selected" to="/"> Home</NavLink>
                 </li>
                 <li>
-                    <NavLink exact={true} activeClassName="nav-selected" to="/profile"> Profile</NavLink>
+                    <NavLink exact={true} activeClassName="nav-selected" to="/me"> Profile</NavLink>
                 </li>
                 <li>
-                    <NavLink activeClassName="nav-selected" to="/login"> Login</NavLink>
+                    <NavLink exact={true} activeClassName="nav-selected" to="/login"> Login</NavLink>
                 </li>
                 <li>
                     <NavLink exact={true} activeClassName="nav-selected" to="/newPost"> Add Post</NavLink>

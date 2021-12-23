@@ -1,28 +1,89 @@
-import {
-    NavLink
-} from "react-router-dom";
-import { getAuth, onAuthStateChanged, signOut } from "@firebase/auth";
-import{useEffect, useState} from "react";
+import{useForm} from "react-hook-form";
+import { useHistory } from "react-router-dom";
+import{ getAuth, onAuthStateChanged} from 'firebase/auth';
+import{useEffect} from 'react'
+import "./styles.css";
+
 
 export const NewPostPage = () => {
 
-    const [user, setUser] = useState(null);
+    const { register, handleSubmit } = useForm();
+    const history = useHistory();
 
+    //check if current user is logged into firebase
     useEffect(
-        () => {
+        ()=> {
+            
             const auth = getAuth();
-            onAuthStateChanged( auth, (user) => {
-                if(user){
-                    setUser(user);
-                }else {
-                    setUser(null);
-                } 
+            console.log(auth.currentUser);
+            onAuthStateChanged(auth, (user) => {
+                if (!user) {
+                    history.push('/login');
+                }
             })
         }, []
-    )
+    ); 
+    
 
+    const submitPost = async (formVals) => {
+        const auth = getAuth();
 
+        const formattedData = {
+            fields: {
+                user:{
+                    stringValue: auth.currentUser.email
+                },
+                text: {
+                    stringValue: formVals.text
+                },
+                image: {
+                    stringValue: formVals.image
+                },
+            
+            }
+        }
+    
+
+    console.log(formVals, formattedData);
+    try {
+        const response = await fetch('https://firestore.googleapis.com/v1/projects/itec4012-social-media-app/databases/(default)/documents/social%20media%20posts/',
+        {
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            method: "POST",
+            body: JSON.stringify(formattedData)
+        })
+        history.push('/');
+    } catch (error) {
+        console.log("Error", error);
+    }
+};
+        
+    
     return(
-        user &&  <NavLink exact={true} activeClassName="nav-selected" to="/newPost"> Add Post</NavLink>
-    )
-}
+        <div className="pets-page">
+            <form className="form-layout"  onSubmit={handleSubmit(submitPost)}>
+                <h2>Create a new post: </h2>
+                <br />
+                
+                <label htmlFor="text"> Text </label>
+                <input
+                {...register("text")}
+                name="text"
+                required
+                />   
+                <label htmlFor="image"> Image </label> 
+                <input
+                {...register("image")}  
+                name="image"
+                required
+                />
+                <input type="submit" value="Publish Post" Post />
+                <br/>
+            
+                    
+            </form>
+        </div>
+    );
+};

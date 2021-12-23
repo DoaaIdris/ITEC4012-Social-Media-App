@@ -22,7 +22,7 @@ function App() {
         <Route exact path="/login">
           <LoginPage />
         </Route>
-        <Route exact path="/profile">
+        <Route exact path="/me">
           <ProfilePage />
         </Route>
         <Route exact path="/newPost">

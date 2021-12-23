@@ -20,7 +20,7 @@ export const ProfilePage = () => {
         ()=> {
             getPosts();
             const auth = getAuth();
-            console.log(auth.currentUser.email);
+            //console.log(auth.currentUser.email);
             onAuthStateChanged(auth, (user) => {
                 if (!user) {
                 history.push('/login');
