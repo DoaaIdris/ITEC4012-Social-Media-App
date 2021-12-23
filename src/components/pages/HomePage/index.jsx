@@ -3,6 +3,7 @@ import{ useContext, useEffect, useState} from 'react'
 import { PostItem } from "../../PostItem";
 import{getAuth, onAuthStateChanged} from 'firebase/auth';
 import { useHistory } from "react-router";
+import { NewPostModal } from "../../NewPostModal";
 
 export const HomePage = () => {
   const[posts, setPosts] = useState([]);
@@ -62,6 +63,7 @@ export const HomePage = () => {
         }
 
       </div>
+     
     </div>
   );
 };

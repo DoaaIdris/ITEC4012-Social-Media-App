@@ -8,7 +8,6 @@ import { Navbar } from './components/Navbar';
 import { HomePage } from './components/pages/HomePage';
 import { LoginPage } from './components/pages/LoginPage';
 import { ProfilePage} from './components/pages/ProfilePage';
-import { NewPostPage} from './components/pages/NewPostPage';
 
 
 function App() {
@@ -22,11 +21,8 @@ function App() {
         <Route exact path="/login">
           <LoginPage />
         </Route>
-        <Route exact path="/profile">
+        <Route exact path="/me">
           <ProfilePage />
-        </Route>
-        <Route exact path="/newPost">
-          <NewPostPage />
         </Route>
       </Switch>
     </Router>

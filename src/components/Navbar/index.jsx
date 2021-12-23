@@ -8,9 +8,15 @@ import { CgProfile } from 'react-icons/cg';
 
 
 import { Logout } from "../Logout";
+import { useState} from "react";
+import { NewPostModal } from "../NewPostModal";
 
 import "./styles.css"
+
 export const Navbar = () => {
+
+    const [show, setShow] = useState(null);
+
     return (
         <nav className="navbar">
             <ul className="navbar-list">
@@ -25,6 +31,10 @@ export const Navbar = () => {
                 </li>
                 <li>
                     <NavLink  exact={true} activeClassName="nav-selected" to="/login"> Login</NavLink>
+                </li>
+                <li>
+                    <a activeClassName="nav-selected" onClick={() => setShow(true)}>Add Post </a>
+                    <NewPostModal onClose={() => setShow(false)} show={show}/>
                 </li>
                 <li>
                     <Logout></Logout>
