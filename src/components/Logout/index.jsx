@@ -4,6 +4,9 @@ import {
 
 import { getAuth, onAuthStateChanged, signOut } from "@firebase/auth";
 import{useEffect, useState} from "react";
+import { IoLogOutOutline } from 'react-icons/io5';
+
+import "./styles.css"
 
 export const Logout = () => {
 
@@ -32,8 +35,13 @@ export const Logout = () => {
     }
 
     return(
-        user &&  <NavLink activeClassName="nav-selected" to="/login" onClick={logoutUser}>
-            Logout
-        </NavLink>
+        user && 
+        <div className="logout">
+            <NavLink activeClassName="nav-selected" to="/login" onClick={logoutUser}>
+                Logout
+                <IoLogOutOutline className="icon"/>
+            </NavLink>
+        </div>
+  
     )
 }

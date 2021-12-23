@@ -1,0 +1,22 @@
+.logout{
+    align-content: center;
+    margin-top: -8px;
+}
+
+.icon{
+    align-items: stretch;
+    padding: 0;
+    margin: 0;
+    position: relative;
+    justify-content: center;
+    height: 25px;
+    width: 25px;
+    color: rgb(109, 109, 109);
+    margin-left: 6px;
+    top: 7px;
+    
+}
+
+.icon:hover {
+  color: rgb(15, 15, 15);
+}

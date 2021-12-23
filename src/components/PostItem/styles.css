@@ -1,29 +1,60 @@
 .post{
     width: 600px;
-    display: block;
-    flex-direction: column;
-    align-items: center;
-    margin: 1rem;
+    align-items: stretch;
     box-shadow: 0 2px 7px #dfdfdf;
     background: #fafafa;
+    display: flex;
+    flex-basis: auto;
+    position: relative;
+    justify-content: center;
+    margin-bottom: 12px;
+    flex-direction: column;
 }
 
 .post-photo{
-    width: 300px;
-    height: 200px;
     object-fit: cover;
-    margin-bottom: 5px;
+    border-radius: 16px;
+    border-color: rgb(56, 68, 77);
+    overflow: hidden;
+    border-width: 1px;
+    border-style: solid;
+    align-items: stretch;
+    border: 0 solid black;
+    box-sizing: border-box;
+    position: relative;
+    display: block;
+    width: 70%;
+    margin-top: 2px;
+    margin-bottom: 10px;
+    margin-left: 15px;
+
 }
 
 .post-user {
-    font-size: 1.3rem;
-    padding: 5px;
+    font-size: 15px;
     text-transform: uppercase;
+    align-items: stretch;
+    display: flex;
+    flex-basis: auto;
+    flex-direction: column;
+    position: relative;
+    margin-bottom: 2px;
+    margin-left: 15px;
+    padding-right: 16px;
+    font-weight: 700;
+    line-height: 20px;
 }
 
 .post-text {
-    color: gray;
-    padding: 5px;
-    font-size: 0.9rem;
-    text-transform: uppercase;
+    color: rgb(0, 0, 0);
+    align-items: stretch;
+    margin-left: 15px;
+    display: flex;
+    flex-basis: auto;
+    flex-direction: column;
+    position: relative;
+    font-size: 15px;
+    font-weight: 500;
+    padding-right: 16px;
+    
 }

@@ -2,7 +2,10 @@ import {
     NavLink
 } from "react-router-dom";
 
-import { FaStore, FaShoppingCart} from 'react-icons/fa';
+import { AiFillHome} from 'react-icons/ai';
+import { BiMessageSquareAdd} from 'react-icons/bi';
+import { CgProfile } from 'react-icons/cg';
+
 
 import { Logout } from "../Logout";
 
@@ -12,16 +15,16 @@ export const Navbar = () => {
         <nav className="navbar">
             <ul className="navbar-list">
                 <li>
-                    <NavLink exact={true} activeClassName="nav-selected" to="/"> Home</NavLink>
+                    <NavLink  exact={true} activeClassName="nav-selected" to="/"> <AiFillHome className = "icons"/> </NavLink>
                 </li>
                 <li>
-                    <NavLink exact={true} activeClassName="nav-selected" to="/profile"> Profile</NavLink>
+                    <NavLink  exact={true} activeClassName="nav-selected" to="/profile"> <CgProfile className = "icons"/> </NavLink>
+                </li> 
+                <li>
+                    <NavLink  exact={true} activeClassName="nav-selected" to="/newPost"> <BiMessageSquareAdd className = "icons"/> </NavLink>
                 </li>
                 <li>
-                    <NavLink activeClassName="nav-selected" to="/login"> Login</NavLink>
-                </li>
-                <li>
-                    <NavLink exact={true} activeClassName="nav-selected" to="/newPost"> Add Post</NavLink>
+                    <NavLink  exact={true} activeClassName="nav-selected" to="/login"> Login</NavLink>
                 </li>
                 <li>
                     <Logout></Logout>

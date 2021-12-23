@@ -11,12 +11,12 @@ import { initializeApp } from "firebase/app";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyBPJEra6mTTot5SqTWJCcFbdo0vhXG3aE0",
-  authDomain: "itec4012-social-media-app.firebaseapp.com",
-  projectId: "itec4012-social-media-app",
+  apiKey: process.env.REACT_APP_API_KEY,
+  authDomain: process.env.REACT_APP_AUTH_DOMAIN,
+  projectId: process.env.REACT_APP_PROJECT_ID,
   storageBucket: "itec4012-social-media-app.appspot.com",
-  messagingSenderId: "710586018654",
-  appId: "1:710586018654:web:3324aaf3be964096d83dcf"
+  messagingSenderId: process.env.REACT_APP_MESSAGING_SENDER_ID,
+  appId: process.env.REACT_APP_FIREBASE_APP_ID
 };
 
 // Initialize Firebase

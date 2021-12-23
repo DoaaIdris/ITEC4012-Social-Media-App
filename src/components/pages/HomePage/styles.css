@@ -1,0 +1,11 @@
+.posts-container{
+    max-width: 935px;
+    width: 100%;
+    margin:0 auto;
+    padding: 0;
+    position: relative;
+    display: block;
+    align-items: stretch;
+    justify-content: center;
+    align-content: center;
+}
