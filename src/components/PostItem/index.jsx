@@ -5,18 +5,6 @@ export const PostItem = (props) => {
     
     const {user, text, image} = props;
 
-    //const globalState = useContext(PetsOrderContext);
-
-    const addPetToCart = () => {
-
-        const pet = {
-            user,
-            text,
-            image   
-        }
-
-    }
-
     return(
         <div className="post">
             <p className="post-user"> {user.substring(0, user.indexOf("@"))}</p>

@@ -57,7 +57,6 @@ export const HomePage = () => {
           ))
         }
 
-        
         {
           loading && <p>Loading data..</p>
         }

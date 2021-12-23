@@ -2,12 +2,14 @@ import {
     NavLink
 } from "react-router-dom";
 
-import { getAuth, onAuthStateChanged, signOut } from "@firebase/auth";
+import { getAuth, onAuthStateChanged} from "@firebase/auth";
 import{useEffect, useState} from "react";
 import { PostItem } from "../../PostItem";
+import { ProfileHeader } from "../../ProfileHeader";
 import { useHistory } from "react-router";
 
 import "./styles.css";
+
 
 export const ProfilePage = () => {
 
@@ -15,12 +17,16 @@ export const ProfilePage = () => {
 
     const history = useHistory();
 
+    const auth = getAuth();
+
+
     //check if current user is logged into firebase
     useEffect(
         ()=> {
             getPosts();
             const auth = getAuth();
             console.log(auth.currentUser.email);
+           
             onAuthStateChanged(auth, (user) => {
                 if (!user) {
                 history.push('/login');
@@ -28,7 +34,6 @@ export const ProfilePage = () => {
             })
         }, []
     ); 
-
 
     const getPosts = async()=> {
         try {
@@ -47,8 +52,6 @@ export const ProfilePage = () => {
             console.log(formattedData);
 
             setProfilePosts(formattedData);
-            //globalState.initializePosts(formattedData);
-            //setLoading(false);
 
             //filter posts to only get ones by specific logged in user
             const auth = getAuth();
@@ -64,6 +67,7 @@ export const ProfilePage = () => {
             setProfilePosts(profilePosts);
 
             console.log(profilePosts);
+            
 
     
         }catch(err){
@@ -74,15 +78,18 @@ export const ProfilePage = () => {
 
 
     return(
-
-        <div className="posts-container">
+            
+        <div className="profile-page">
+        <ProfileHeader username= {auth.currentUser.email} profilePhoto="https://www.seekpng.com/png/detail/966-9665493_my-profile-icon-blank-profile-image-circle.png" followers="10" following="50"
+        description="Illustrations | SEVENTEEN | 日本語も勉強しています| Insta: dodotheburd"/>
+        <h2 className="profile-page-title">My Posts</h2>
+        <div className="profile-posts-container">
             {
-
             profilePosts.map((post) => (
                 <PostItem user ={post.user.stringValue} image={post.image.stringValue} text={post.text.stringValue}></PostItem>
             ))
             }
-
+        </div>
         </div>
     
     )

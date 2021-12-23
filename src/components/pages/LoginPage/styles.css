@@ -19,6 +19,7 @@ input[type=submit]{
     border: none;
     color: white;
     cursor: pointer;
+    width: 408px;
 }
 
 button{
@@ -26,4 +27,5 @@ button{
     font-size: 1.4rem;
     background: transparent;
     cursor: pointer;
+    width: 408px;
 }

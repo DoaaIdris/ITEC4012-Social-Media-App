@@ -45,7 +45,7 @@ export const LoginPage = () => {
             {mode === "login" && (
                 
                <form className="form-layout" onSubmit={handleSubmit(loginUser)}>
-                   <h2>Welcome back, please sign in!</h2>
+                   <h2>Welcome Back, Please Sign In!</h2>
                    <br />
 
                    <label htmlFor="user">Username</label>
@@ -57,14 +57,14 @@ export const LoginPage = () => {
                    <input type="submit" value="login" />
                    <br />
                    <p>Don't have an account with us yet? Create a new account with your email and password.</p>
-                   <button onClick={() => setMode("signup")}> Sign Up</button>
+                   <button  onClick={() => setMode("signup")}> Sign Up</button>
                </form>     
             )}
 
 
             {mode === "signup" && (
                 <form className="form-layout" onSubmit={handleSubmit(signUpUser)}>
-                    <h2>Creat a new account now!</h2>
+                    <h2>Creat a New Account</h2>
                     <br />
 
                     <label htmlFor="user">Email</label>
