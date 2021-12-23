@@ -2,10 +2,9 @@ import{useForm} from "react-hook-form";
 import { useHistory } from "react-router-dom";
 import{ getAuth, onAuthStateChanged} from 'firebase/auth';
 import{useEffect} from 'react'
-import "./styles.css";
 
-
-export const NewPostPage = () => {
+import "./styles.css"
+export const NewPostModal = (props) => {
 
     const { register, handleSubmit } = useForm();
     const history = useHistory();
@@ -59,31 +58,39 @@ export const NewPostPage = () => {
         console.log("Error", error);
     }
 };
-        
-    
-    return(
-        <div className="pets-page">
-            <form className="form-layout"  onSubmit={handleSubmit(submitPost)}>
-                <h2>Create a new post: </h2>
-                <br />
-                
-                <label htmlFor="text"> Text </label>
-                <input
-                {...register("text")}
-                name="text"
-                required
-                />   
-                <label htmlFor="image"> Image </label> 
-                <input
-                {...register("image")}  
-                name="image"
-                required
-                />
-                <input type="submit" value="Publish Post" Post />
-                <br/>
-            
-                    
-            </form>
+
+if(!props.show){
+    return null
+}
+
+    return (
+        <div className="modal" onClick = {props.onClose}>
+            <div className="modal-content" onClick={e => e.stopPropagation()}>
+                <div className="modal-header">
+                    <h2 className="title">Create a New Post! </h2>
+                </div>
+                <div className="model-body">
+                    <form className="form-layout"  onSubmit={handleSubmit(submitPost)}>
+                        
+                        <br />
+                        <label htmlFor="text"> Add Caption </label>
+                        <input
+                        {...register("text")}
+                        name="text"
+                        required
+                        />   
+                        <label htmlFor="image"> Add an Image </label> 
+                        <input
+                        {...register("image")}  
+                        name="image"
+                        
+                        />
+                        <input className="submit-button" type="submit" value="Publish Post" Post />
+                        <br/>
+
+                    </form>
+                </div>
+            </div>
         </div>
-    );
-};
+    )
+}

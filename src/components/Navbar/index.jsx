@@ -5,9 +5,15 @@ import {
 import { FaStore, FaShoppingCart} from 'react-icons/fa';
 
 import { Logout } from "../Logout";
+import { useState} from "react";
+import { NewPostModal } from "../NewPostModal";
 
 import "./styles.css"
+
 export const Navbar = () => {
+
+    const [show, setShow] = useState(null);
+
     return (
         <nav className="navbar">
             <ul className="navbar-list">
@@ -21,7 +27,8 @@ export const Navbar = () => {
                     <NavLink exact={true} activeClassName="nav-selected" to="/login"> Login</NavLink>
                 </li>
                 <li>
-                    <NavLink exact={true} activeClassName="nav-selected" to="/newPost"> Add Post</NavLink>
+                    <a activeClassName="nav-selected" onClick={() => setShow(true)}>Add Post </a>
+                    <NewPostModal onClose={() => setShow(false)} show={show}/>
                 </li>
                 <li>
                     <Logout></Logout>

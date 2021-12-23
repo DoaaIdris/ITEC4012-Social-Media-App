@@ -1,0 +1,40 @@
+.modal{
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgb(100, 100, 100, 0.5);
+    display:flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-content {
+    width: 500px;
+    background-color: #fff;
+}
+
+.modal-header{
+    padding: 10px;
+}
+
+.title {
+    margin-top: 0;
+    text-align: center;
+}
+
+.modal-body{
+    padding: 10px;
+    border-top: 1px solid #eee;
+    border-bottom: 1px solid #eee;
+}
+
+.form-layout{
+    margin-top: 0;
+    
+}
+
+.submit-button{
+    width: 408px;
+}
