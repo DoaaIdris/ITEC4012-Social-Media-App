@@ -1,6 +1,3 @@
-import {
-    NavLink
-} from "react-router-dom";
 
 import { getAuth, onAuthStateChanged} from "@firebase/auth";
 import{useEffect, useState} from "react";
@@ -17,22 +14,20 @@ export const ProfilePage = () => {
 
     const history = useHistory();
 
-    const auth = getAuth();
-
 
     //check if current user is logged into firebase
     useEffect(
         ()=> {
-            getPosts();
-            const auth = getAuth();
-            //console.log(auth.currentUser.email);
-            onAuthStateChanged(auth, (user) => {
-                if (!user) {
-                history.push('/login');
-                }
-            })
+          getPosts();
+          const auth = getAuth();
+          console.log(auth.currentUser);
+          onAuthStateChanged(auth, (user) => {
+            if (!user) {
+              history.push('/login');
+            }
+          })
         }, []
-    ); 
+      ); 
 
     const getPosts = async()=> {
         try {
@@ -75,6 +70,7 @@ export const ProfilePage = () => {
         }
     }
 
+    const auth = getAuth();
 
     return(
             

@@ -1,15 +1,13 @@
 import "./styles.css";
-import{ useContext, useEffect, useState} from 'react'
+import{useEffect, useState} from 'react'
 import { PostItem } from "../../PostItem";
 import{getAuth, onAuthStateChanged} from 'firebase/auth';
 import { useHistory } from "react-router";
-import { NewPostModal } from "../../NewPostModal";
 
 export const HomePage = () => {
   const[posts, setPosts] = useState([]);
   const [loading, setLoading] = useState(true);
 
- // const globalState = useContext(PetsOrderContext);
 
   const history = useHistory();
 

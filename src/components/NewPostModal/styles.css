@@ -17,6 +17,7 @@
 
 .modal-header{
     padding: 10px;
+    padding-top: 20px;
 }
 
 .title {
@@ -30,8 +31,8 @@
     border-bottom: 1px solid #eee;
 }
 
-.form-layout{
-    margin-top: 0;
+#form{
+    margin-top: 10px;
     
 }
 

@@ -4,7 +4,7 @@
     justify-content: center;
     width: 400px;
     margin: 0 auto;
-    margin-top: 50px;
+    margin-top: 100px;
 }
 
 input{
@@ -28,4 +28,8 @@ button{
     background: transparent;
     cursor: pointer;
     width: 408px;
+}
+
+.form-title{
+    text-align: center;
 }

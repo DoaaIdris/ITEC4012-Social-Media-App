@@ -6,10 +6,10 @@ import { AiFillHome} from 'react-icons/ai';
 import { BiMessageSquareAdd} from 'react-icons/bi';
 import { CgProfile } from 'react-icons/cg';
 
-
 import { Logout } from "../Logout";
 import { useState} from "react";
 import { NewPostModal } from "../NewPostModal";
+import{getAuth, onAuthStateChanged} from 'firebase/auth';
 
 import "./styles.css"
 
@@ -24,18 +24,16 @@ export const Navbar = () => {
                     <NavLink  exact={true} activeClassName="nav-selected" to="/"> <AiFillHome className = "icons"/> </NavLink>
                 </li>
                 <li>
-                    <NavLink  exact={true} activeClassName="nav-selected" to="/profile"> <CgProfile className = "icons"/> </NavLink>
+                    <NavLink  exact={true} activeClassName="nav-selected" to="/me"> <CgProfile className = "icons"/> </NavLink>
                 </li> 
                 <li>
-                    <NavLink  exact={true} activeClassName="nav-selected" to="/newPost"> <BiMessageSquareAdd className = "icons"/> </NavLink>
+                    <a activeClassName="nav-selected"  onClick={() => setShow(true)}> <BiMessageSquareAdd className = "icons"/> </a>
+                    <NewPostModal onClose={() => setShow(false)} show={show}/>
                 </li>
                 <li>
                     <NavLink  exact={true} activeClassName="nav-selected" to="/login"> Login</NavLink>
                 </li>
-                <li>
-                    <a activeClassName="nav-selected" onClick={() => setShow(true)}>Add Post </a>
-                    <NewPostModal onClose={() => setShow(false)} show={show}/>
-                </li>
+                
                 <li>
                     <Logout></Logout>
                 </li>

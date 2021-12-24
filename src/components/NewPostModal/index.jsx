@@ -70,7 +70,7 @@ if(!props.show){
                     <h2 className="title">Create a New Post! </h2>
                 </div>
                 <div className="model-body">
-                    <form className="form-layout"  onSubmit={handleSubmit(submitPost)}>
+                    <form className="form-layout" id="form" onSubmit={handleSubmit(submitPost)}>
                         
                         <br />
                         <label htmlFor="text"> Add Caption </label>

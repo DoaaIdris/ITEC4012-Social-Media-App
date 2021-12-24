@@ -45,7 +45,7 @@ export const LoginPage = () => {
             {mode === "login" && (
                 
                <form className="form-layout" onSubmit={handleSubmit(loginUser)}>
-                   <h2>Welcome Back, Please Sign In!</h2>
+                   <h2 className="form-title" >Welcome Back, Please Sign In!</h2>
                    <br />
 
                    <label htmlFor="user">Username</label>
@@ -64,7 +64,7 @@ export const LoginPage = () => {
 
             {mode === "signup" && (
                 <form className="form-layout" onSubmit={handleSubmit(signUpUser)}>
-                    <h2>Creat a New Account</h2>
+                    <h2 className="form-title">Creat a New Account</h2>
                     <br />
 
                     <label htmlFor="user">Email</label>
@@ -73,7 +73,7 @@ export const LoginPage = () => {
                     <label htmlFor="password">Password</label>
                     <input type="password" name="password" required {...register('password')} />
 
-                    <label htmlFor="passwordConfirm">Password</label>
+                    <label htmlFor="passwordConfirm">Re-enter Password</label>
                     <input type="password" name="passwordConfirm" required {...register('passwordConfirm')}/>
 
                     <input type="submit" value="login" />
