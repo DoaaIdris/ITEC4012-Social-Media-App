@@ -1,9 +1,4 @@
 import PropTypes from 'prop-types';
-import { Link } from 'react-router-dom';
-import { useState , useEffect } from 'react';
-import { getAuth, onAuthStateChanged} from "@firebase/auth";
-import { useHistory } from "react-router";
-
 
 import "./styles.css"
 

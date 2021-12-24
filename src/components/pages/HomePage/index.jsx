@@ -36,7 +36,6 @@ export const HomePage = () => {
 
       console.log(formattedData);
       setPosts(formattedData);
-      //globalState.initializePosts(formattedData);
       setLoading(false);
 
     }catch(err){
@@ -52,7 +51,7 @@ export const HomePage = () => {
       <div className="posts-container">
       {
           posts.map((post) => (
-            <PostItem user ={post.user.stringValue} image={post.image.stringValue} text={post.text.stringValue}></PostItem>
+            <PostItem user ={post.user.stringValue} image={post.image.stringValue} text={post.text.stringValue} profileIcon="https://www.seekpng.com/png/detail/966-9665493_my-profile-icon-blank-profile-image-circle.png"></PostItem>
           ))
         }
 

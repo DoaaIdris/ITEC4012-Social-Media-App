@@ -1,4 +1,3 @@
-
 import { getAuth, onAuthStateChanged} from "@firebase/auth";
 import{useEffect, useState} from "react";
 import { PostItem } from "../../PostItem";
@@ -7,13 +6,11 @@ import { useHistory } from "react-router";
 
 import "./styles.css";
 
-
 export const ProfilePage = () => {
 
     const[profilePosts, setProfilePosts] = useState([]);
 
     const history = useHistory();
-
 
     //check if current user is logged into firebase
     useEffect(
@@ -81,7 +78,7 @@ export const ProfilePage = () => {
         <div className="profile-posts-container">
             {
             profilePosts.map((post) => (
-                <PostItem user ={post.user.stringValue} image={post.image.stringValue} text={post.text.stringValue}></PostItem>
+                <PostItem user ={post.user.stringValue} image={post.image.stringValue} text={post.text.stringValue}  profileIcon="https://www.seekpng.com/png/detail/966-9665493_my-profile-icon-blank-profile-image-circle.png"></PostItem>
             ))
             }
         </div>

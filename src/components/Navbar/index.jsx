@@ -9,7 +9,6 @@ import { CgProfile } from 'react-icons/cg';
 import { Logout } from "../Logout";
 import { useState} from "react";
 import { NewPostModal } from "../NewPostModal";
-import{getAuth, onAuthStateChanged} from 'firebase/auth';
 
 import "./styles.css"
 
